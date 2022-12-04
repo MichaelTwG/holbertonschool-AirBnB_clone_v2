@@ -16,8 +16,9 @@ def teardown(exit):
     storage.close()
 
 @app.route("/states_list")
-def show_states_list():    
-    return render_template("7-states_list.html", states=storage.all("State"))
+def show_states_list():
+    from models.state import State
+    return render_template("7-states_list.html", states=storage.all(State))
 
 
 if __name__ == "__main__":
