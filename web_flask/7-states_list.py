@@ -15,6 +15,7 @@ app.url_map.strict_slashes = False
 def teardown(exit):
     storage.close()
 
+
 @app.route("/states_list")
 def show_states_list():
     from models.state import State
