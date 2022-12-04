@@ -15,7 +15,7 @@ app.url_map.strict_slashes = False
 def teardown(exit):
     storage.close()
 
-app.route("/states_list")
+@app.route("/states_list")
 def show_states_list():    
     return render_template("7-states_list.html", states=storage.all("State"))
 
