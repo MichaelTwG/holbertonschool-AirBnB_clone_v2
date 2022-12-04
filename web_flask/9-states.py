@@ -24,11 +24,14 @@ def states(id):
 
     st = storage.all(State)
     ci = storage.all(City)
+    name = "State.{}".format(id)
 
-    if id is not None:
+    if id is not None or name not in st.keys():
         for state in st.values():
             if state["id"] == id:
                 st = state
+    else:
+        st = 1
 
     return render_template("9-states.html", states=st, cities=ci, id=id)
 

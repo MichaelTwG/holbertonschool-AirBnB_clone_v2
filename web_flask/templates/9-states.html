@@ -12,6 +12,9 @@
             {% endfor %}
         </ul>
         {% else %}
+        {% if states == 1 %}
+        <h1>Not Found!</h1>
+        {% else %}
         <h1>State: {{ states.name }}</h1>
 
         <h3>Cities:</h3>
@@ -23,6 +26,7 @@
             {% endif %}
             {% endfor %}
         </ul>
+        {% endif %}
         {% endif %}
     </BODY>
 </HTML>
