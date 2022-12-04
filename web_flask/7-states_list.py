@@ -11,6 +11,8 @@ app = Flask(__name__)
 # SET STRICT SLASHES FOT ALL ROUTES
 app.url_map.strict_slashes = False
 # Add app.teardown_appcontxt - call storage.clos after each request
+
+
 @app.teardown_appcontext
 def teardown(exit):
     storage.close()
