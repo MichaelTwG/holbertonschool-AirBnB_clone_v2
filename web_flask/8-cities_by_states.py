@@ -15,6 +15,7 @@ app.url_map.strict_slashes = False
 def teardown(exit):
     storage.close()
 
+
 @app.route("/cities_by_states")
 def cities_by_states():
     from models.state import State
@@ -24,6 +25,7 @@ def cities_by_states():
     ci = storage.all(City)
 
     return render_template("8-cities_by_states.html", states=st, cities=ci)
+
 
 if __name__ == "__main__":
     app.run(port=5000, host="0.0.0.0", debug=True)
